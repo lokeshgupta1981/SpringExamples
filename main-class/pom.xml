@@ -9,15 +9,16 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.springexamples.demo</groupId>
-	<artifactId>minimum-setup</artifactId>
+	<artifactId>main-class</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>minimum-setup</name>
+	<name>main-class</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- The main class to start -->
+      <start-class>com.springexamples.demo.MainClassOne</start-class>
 	</properties>
 	<dependencies>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -28,6 +29,5 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
 	</dependencies>
 </project>

@@ -25,5 +25,6 @@
 	<modules>
 		<module>spring-boot-rest</module>
 		<module>minimum-setup</module>
+		<module>main-class</module>
 	</modules>
 </project>
