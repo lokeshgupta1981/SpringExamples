@@ -26,5 +26,9 @@
 		<module>minimum-setup</module>
 		<module>main-class</module>
     <module>get-loaded-beans-info</module>
+    <module>disable-spring-boot-banner</module>
+    <module>custom-spring-boot-banner</module>
+    <module>context-path-server-port</module>
+    <module>embedded-jetty-server</module>
   </modules>
 </project>
