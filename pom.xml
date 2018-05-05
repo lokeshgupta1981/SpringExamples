@@ -30,5 +30,6 @@
     <module>custom-spring-boot-banner</module>
     <module>context-path-server-port</module>
     <module>embedded-jetty-server</module>
+    <module>template-freemarker</module>
   </modules>
 </project>
