@@ -34,5 +34,7 @@
     <module>template-thymeleaf</module>
     <module>template-mustache</module>
     <module>template-jsp</module>
+    <module>ssl-https</module>
+    <module>packaging-war</module>
   </modules>
 </project>
