@@ -31,5 +31,8 @@
     <module>context-path-server-port</module>
     <module>embedded-jetty-server</module>
     <module>template-freemarker</module>
+    <module>template-thymeleaf</module>
+    <module>template-mustache</module>
+    <module>template-jsp</module>
   </modules>
 </project>

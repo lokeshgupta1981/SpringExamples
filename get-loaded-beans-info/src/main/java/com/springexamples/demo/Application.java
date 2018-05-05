@@ -9,10 +9,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class Application {
-	public static void main(String[] args) {
+public class Application 
+{
+	public static void main(String[] args) 
+	{
 		SpringApplication.run(Application.class, args);
-
 	}
 
 	@Bean
@@ -21,7 +22,6 @@ public class Application {
 
 			String[] beans = appContext.getBeanDefinitionNames();
 			Arrays.stream(beans).sorted().forEach(System.out::println);
-
 		};
 	}
 }
