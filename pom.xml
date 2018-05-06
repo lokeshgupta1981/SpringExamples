@@ -42,5 +42,6 @@
 		<module>rest-jersey-example</module>
     <module>swagger-ui</module>
     <module>rest-hateoas</module>
+    <module>resttemplate</module>
   </modules>
 </project>
