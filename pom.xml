@@ -41,5 +41,6 @@
 		<module>enable-scheduling</module>
 		<module>rest-jersey-example</module>
     <module>swagger-ui</module>
+    <module>rest-hateoas</module>
   </modules>
 </project>
