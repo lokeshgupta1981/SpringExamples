@@ -43,5 +43,6 @@
     <module>swagger-ui</module>
     <module>rest-hateoas</module>
     <module>resttemplate</module>
+    <module>logger-configuration</module>
   </modules>
 </project>
