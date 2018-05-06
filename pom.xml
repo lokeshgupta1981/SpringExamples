@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.springexamples.demo</groupId>
@@ -25,16 +26,20 @@
 		<module>spring-boot-rest</module>
 		<module>minimum-setup</module>
 		<module>main-class</module>
-    <module>get-loaded-beans-info</module>
-    <module>disable-spring-boot-banner</module>
-    <module>custom-spring-boot-banner</module>
-    <module>context-path-server-port</module>
-    <module>embedded-jetty-server</module>
-    <module>template-freemarker</module>
-    <module>template-thymeleaf</module>
-    <module>template-mustache</module>
-    <module>template-jsp</module>
-    <module>ssl-https</module>
-    <module>packaging-war</module>
-  </modules>
+		<module>get-loaded-beans-info</module>
+		<module>disable-spring-boot-banner</module>
+		<module>custom-spring-boot-banner</module>
+		<module>context-path-server-port</module>
+		<module>embedded-jetty-server</module>
+		<module>template-freemarker</module>
+		<module>template-thymeleaf</module>
+		<module>template-mustache</module>
+		<module>template-jsp</module>
+		<module>ssl-https</module>
+		<module>packaging-war</module>
+		<module>command-line-runner</module>
+		<module>server-customization</module>
+		<module>enable-scheduling</module>
+		<module>rest-jersey-example</module>
+	</modules>
 </project>
