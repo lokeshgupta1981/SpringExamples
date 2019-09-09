@@ -1,13 +1,13 @@
 # Spring Examples
 
-This repository hosts the projects and their source codes written for various tutorials written in [SpringExamples.com](https://springexamples.com/).
+This repository hosts the projects and their source codes written for various tutorials written in [howtodoinjava.com](https://howtodoinjava.com/).
 
 ## Development Environment
 
-* Spring Boot 2.0.1.RELEASE
+* Spring Boot 2.1.8.RELEASE
 * Maven 4
 * JDK 8
-* Eclipse Neon.2
+* Eclipse Photon
 
 ## To import this project into Eclipse IDE
 
