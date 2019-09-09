@@ -45,6 +45,7 @@
 		<module>rest-hateoas</module>
 		<module>resttemplate</module>
 		<module>logger-configuration</module>
+		<module>unit-testing</module>
 	</modules>
 
 	<build>
