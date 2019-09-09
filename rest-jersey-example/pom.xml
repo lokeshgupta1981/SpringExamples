@@ -8,9 +8,7 @@
 		<artifactId>SpringExamples</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.springexamples.demo</groupId>
 	<artifactId>rest-jersey-example</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>rest-jersey-example</name>
 	<url>http://maven.apache.org</url>
 	<properties>

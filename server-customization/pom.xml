@@ -8,9 +8,7 @@
 		<artifactId>SpringExamples</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.springexamples.demo</groupId>
 	<artifactId>server-customization</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>server-customization</name>
 	<url>http://maven.apache.org</url>
 	<properties>

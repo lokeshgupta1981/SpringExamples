@@ -8,9 +8,7 @@
 		<artifactId>SpringExamples</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.springexamples.demo</groupId>
 	<artifactId>rest-hateoas</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>rest-hateoas</name>
 	<url>http://maven.apache.org</url>
 	<properties>

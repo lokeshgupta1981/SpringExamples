@@ -7,9 +7,7 @@
     <artifactId>SpringExamples</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.springexamples.demo</groupId>
   <artifactId>get-loaded-beans-info</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>get-loaded-beans-info</name>
   <url>http://maven.apache.org</url>
   <properties>

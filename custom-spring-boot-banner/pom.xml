@@ -8,9 +8,7 @@
 		<artifactId>SpringExamples</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.springexamples.demo</groupId>
 	<artifactId>custom-spring-boot-banner</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>custom-spring-boot-banner</name>
 	<url>http://maven.apache.org</url>
 	<properties>
