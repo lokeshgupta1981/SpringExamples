@@ -1,58 +1,77 @@
 package com.howtodoinjava.rest.model;
 
-public class Employee {
+import java.io.Serializable;
 
-    public Employee() {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-    }
+@Entity
+@Table(name = "tbl_employees")
+public class Employee implements Serializable {
+	private static final long serialVersionUID = 1L;
 
-    public Employee(Integer id, String firstName, String lastName, String email) {
-        super();
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
- 
-    private Integer id;
-    private String firstName;
-    private String lastName;
-    private String email;
+	public Employee() {
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public Employee(String firstName, String lastName, String email) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
+	private Integer id;
+	
+	@Column(name = "firstName")
+	private String firstName;
+	
+	@Column(name = "lastName")
+	private String lastName;
+	
+	@Column(name = "email")
+	private String email;
 
-    public String getFirstName() {
-        return firstName;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public String getLastName() {
-        return lastName;
-    }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getLastName() {
+		return lastName;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-    @Override
-    public String toString() {
-        return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
-    }
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+	}
 }

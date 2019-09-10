@@ -1,38 +1,41 @@
 package com.howtodoinjava.rest.controller;
 
 import java.net.URI;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.howtodoinjava.rest.dao.EmployeeDAO;
+import com.howtodoinjava.rest.dao.EmployeeRepository;
 import com.howtodoinjava.rest.model.Employee;
 import com.howtodoinjava.rest.model.Employees;
 
 @RestController
-@RequestMapping(path = "/employees")
 public class EmployeeController 
 {
 	@Autowired
-    private EmployeeDAO employeeDao;
+    private EmployeeRepository employeeRepository;
 
-	@GetMapping(path="/", produces = "application/json")
+	@GetMapping(path="/employees", produces = "application/json")
     public Employees getEmployees() 
     {
-        return employeeDao.getAllEmployees();
+		Employees response = new Employees();
+		ArrayList<Employee> list = new ArrayList<>();
+		employeeRepository.findAll().forEach(e -> list.add(e));
+		response.setEmployeeList(list);
+        return response;
     }
     
-    @PostMapping(path= "/", consumes = "application/json", produces = "application/json")
+    @PostMapping(path= "/employees", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Object> addEmployee(@RequestBody Employee employee) {       
                 
         //add resource
-        employeeDao.addEmployee(employee);
+    	employee = employeeRepository.save(employee);
         
         //Create resource location
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
