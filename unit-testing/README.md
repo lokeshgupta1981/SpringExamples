@@ -4,6 +4,7 @@ Tutorials related to this project:
 
 1. [Spring rest controller unit test example](https://howtodoinjava.com/spring-boot2/rest-controller-unit-test-example/).
 2. [Junit 5 with Spring boot 2](https://howtodoinjava.com/spring-boot2/junit5-with-spring-boot2/)
+3. [Spring boot integration test example](https://howtodoinjava.com/spring-boot2/spring-integration-testing/)
 
 ## Import the project into Eclipse IDE
 
