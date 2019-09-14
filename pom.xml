@@ -46,6 +46,7 @@
 		<module>resttemplate</module>
 		<module>logger-configuration</module>
 		<module>unit-testing</module>
+		<module>spring-webflux-demo</module>
 	</modules>
 
 	<build>
