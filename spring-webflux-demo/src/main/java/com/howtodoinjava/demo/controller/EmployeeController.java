@@ -31,7 +31,7 @@ public class EmployeeController
         employeeService.create(e);
     }
  
-    @GetMapping(value = "/id/{id}")
+    @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Mono<Employee>> findById(@PathVariable("id") Integer id) {
         Mono<Employee> e = employeeService.findById(id);

@@ -34,9 +34,6 @@ public class EmployeeControllerTest
 	@MockBean
 	EmployeeRepository repository;
 
-	@MockBean
-	EmployeeService service;
-
 	@Autowired
 	private WebTestClient webClient;
 
@@ -56,7 +53,7 @@ public class EmployeeControllerTest
 			.exchange()
 			.expectStatus().isCreated();
 
-		Mockito.verify(service, times(1)).create(employee);
+		Mockito.verify(repository, times(1)).save(employee);
 	}
 	
 	@Test
@@ -82,10 +79,10 @@ public class EmployeeControllerTest
 	        .expectStatus().isOk()
 	        .expectBodyList(Employee.class);
         
-        Mockito.verify(service, times(1)).findByName("Test");
+        Mockito.verify(repository, times(1)).findByName("Test");
     }
 	
-	/*@Test
+	@Test
     void testGetEmployeeById() 
 	{
 		Employee employee = new Employee();
@@ -97,15 +94,17 @@ public class EmployeeControllerTest
             .when(repository.findById(100))
             .thenReturn(Mono.just(employee));
 
-        webClient.get().uri("/id/{id}", 100)
+        webClient.get().uri("/{id}", 100)
 	        .exchange()
 	        .expectStatus().isOk()
 	        .expectBody()
 	        .jsonPath("$.name").isNotEmpty()
-	        .jsonPath("$.name").isEqualTo("Test");
+	        .jsonPath("$.id").isEqualTo(100)
+	        .jsonPath("$.name").isEqualTo("Test")
+	        .jsonPath("$.salary").isEqualTo(1000);
         
-        Mockito.verify(service, times(1)).findByName("Test");
-    }*/
+        Mockito.verify(repository, times(1)).findById(100);
+    }
 
 	@Test
     void testDeleteEmployee() 
