@@ -47,6 +47,7 @@
 		<module>logger-configuration</module>
 		<module>unit-testing</module>
 		<module>spring-webflux-demo</module>
+		<module>rest-crud-hibernate</module>
 	</modules>
 
 	<build>

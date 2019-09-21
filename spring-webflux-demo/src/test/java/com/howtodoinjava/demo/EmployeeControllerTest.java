@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
@@ -14,7 +13,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.web.reactive.function.BodyInserters;
 
@@ -26,7 +24,6 @@ import com.howtodoinjava.demo.service.EmployeeService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@ExtendWith(SpringExtension.class)
 @WebFluxTest(controllers = EmployeeController.class)
 @Import(EmployeeService.class)
 public class EmployeeControllerTest 
