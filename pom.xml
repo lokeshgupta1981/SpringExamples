@@ -48,6 +48,7 @@
 		<module>unit-testing</module>
 		<module>spring-webflux-demo</module>
 		<module>rest-crud-hibernate</module>
+		<module>i18n</module>
 	</modules>
 
 	<build>
