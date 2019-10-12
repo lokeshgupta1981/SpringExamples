@@ -50,6 +50,7 @@
 		<module>rest-crud-hibernate</module>
 		<module>i18n</module>
 		<module>oauth2</module>
+		<module>spring-rmi</module>
 	</modules>
 
 	<build>
