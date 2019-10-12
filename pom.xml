@@ -49,6 +49,7 @@
 		<module>spring-webflux-demo</module>
 		<module>rest-crud-hibernate</module>
 		<module>i18n</module>
+		<module>oauth2</module>
 	</modules>
 
 	<build>

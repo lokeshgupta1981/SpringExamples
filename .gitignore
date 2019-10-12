@@ -19,6 +19,7 @@ target/
 
 # eclipse project file
 .settings/
+.metadata/
 .classpath
 .project
 
