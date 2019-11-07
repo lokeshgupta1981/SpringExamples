@@ -50,6 +50,7 @@
 		<module>oauth2</module>
 		<module>spring-rmi</module>
     	<module>email</module>
+    <module>aop</module>
   </modules>
 
 	<build>
