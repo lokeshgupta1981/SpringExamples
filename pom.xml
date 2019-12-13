@@ -51,6 +51,7 @@
 		<module>spring-rmi</module>
     	<module>email</module>
     <module>aop</module>
+    <module>batch-decorator</module>
   </modules>
 
 	<build>
