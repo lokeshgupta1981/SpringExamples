@@ -52,6 +52,7 @@
     	<module>email</module>
     <module>aop</module>
     <module>batch-decorator</module>
+    <module>batch-partitioner</module>
   </modules>
 
 	<build>
