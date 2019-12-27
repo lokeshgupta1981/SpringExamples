@@ -53,6 +53,7 @@
     <module>aop</module>
     <module>batch-decorator</module>
     <module>batch-partitioner</module>
+    <module>boot-hateoas</module>
   </modules>
 
 	<build>
