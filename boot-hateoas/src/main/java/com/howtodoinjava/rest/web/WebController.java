@@ -3,7 +3,11 @@ package com.howtodoinjava.rest.web;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.PagedModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,10 +38,14 @@ public class WebController {
 	@Autowired
 	private AlbumModelAssembler albumModelAssembler;
 	
+	@Autowired
+	private PagedResourcesAssembler<AlbumEntity> pagedResourcesAssembler;
+	
 	@GetMapping("/api/actors")
 	public ResponseEntity<CollectionModel<ActorModel>> getAllActors() 
 	{
-		List<ActorEntity> actorEntities = actorRepository.findAll();
+		List<ActorEntity> actorEntities = (List<ActorEntity>) actorRepository.findAll();
+		
 		return new ResponseEntity<>(
 				actorModelAssembler.toCollectionModel(actorEntities), 
 				HttpStatus.OK);
@@ -52,20 +60,10 @@ public class WebController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
-	/*@GetMapping("/api/actors/{id}/albums")
-	public ResponseEntity<CollectionModel<AlbumModel>> getAlbumsByActorId(@PathVariable("id") Long id) 
-	{
-		List<AlbumEntity> albumEntities = albumRepository.findByActors_Id(id);
-		
-		return new ResponseEntity<>(
-				albumModelAssembler.toCollectionModel(albumEntities), 
-				HttpStatus.OK);
-	}*/
-	
 	@GetMapping("/api/albums")
 	public ResponseEntity<CollectionModel<AlbumModel>> getAllAlbums() 
 	{
-		List<AlbumEntity> albumEntities = albumRepository.findAll();
+		List<AlbumEntity> albumEntities = (List<AlbumEntity>) albumRepository.findAll();
 		
 		return new ResponseEntity<>(
 				albumModelAssembler.toCollectionModel(albumEntities), 
@@ -79,5 +77,18 @@ public class WebController {
 				.map(albumModelAssembler::toModel) 
 				.map(ResponseEntity::ok) 
 				.orElse(ResponseEntity.notFound().build());
+	}
+	
+	//Pageable
+	
+	@GetMapping("/api/albums-list")
+	public ResponseEntity<PagedModel<AlbumModel>> getAllAlbums(Pageable pageable) 
+	{
+		Page<AlbumEntity> albumEntities = albumRepository.findAll(pageable);
+		
+		PagedModel<AlbumModel> collModel = pagedResourcesAssembler
+							.toModel(albumEntities, albumModelAssembler);
+		
+		return new ResponseEntity<>(collModel,HttpStatus.OK);
 	}
 }
