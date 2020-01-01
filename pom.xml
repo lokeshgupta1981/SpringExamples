@@ -50,10 +50,10 @@
 		<module>oauth2</module>
 		<module>spring-rmi</module>
     	<module>email</module>
-    <module>aop</module>
-    <module>batch-decorator</module>
-    <module>batch-partitioner</module>
-    <module>boot-hateoas</module>
+	    <module>aop</module>
+	    <module>batch-decorator</module>
+	    <module>batch-partitioner</module>
+	    <module>boot-hateoas</module>
   </modules>
 
 	<build>
