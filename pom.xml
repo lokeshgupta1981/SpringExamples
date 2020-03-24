@@ -54,6 +54,7 @@
 	    <module>batch-decorator</module>
 	    <module>batch-partitioner</module>
 	    <module>boot-hateoas</module>
+    <module>spring-reactive</module>
   </modules>
 
 	<build>
