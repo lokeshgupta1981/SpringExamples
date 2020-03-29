@@ -1,5 +1,7 @@
 package com.howtodoinjava.reactive.demo.service;
 
+import java.time.Duration;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -21,7 +23,8 @@ public class EmployeeService implements IEmployeeService
 		return webClient.get()
 			.uri("/employees")
 			.retrieve()
-			.bodyToFlux(Employee.class);
+			.bodyToFlux(Employee.class)
+			.timeout(Duration.ofMillis(10_000));
 	}
 
 	public Mono<Employee> create(Employee empl)
@@ -30,7 +33,8 @@ public class EmployeeService implements IEmployeeService
 				.uri("/employees")
 				.body(Mono.just(empl), Employee.class)
 				.retrieve()
-				.bodyToMono(Employee.class);
+				.bodyToMono(Employee.class)
+				.timeout(Duration.ofMillis(10_000));
 	}
 
 	public Mono<Employee> findById(Integer id) 
