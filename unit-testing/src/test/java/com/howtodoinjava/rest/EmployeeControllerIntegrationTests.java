@@ -25,7 +25,7 @@ public class EmployeeControllerIntegrationTests
 	@Autowired
 	private TestRestTemplate restTemplate;
 
-	@Sql({ "schema.sql", "data.sql" })
+	@Sql({ "classpath:schema.sql", "classpath:data.sql" })
 	@Test
 	public void testAllEmployees() 
 	{

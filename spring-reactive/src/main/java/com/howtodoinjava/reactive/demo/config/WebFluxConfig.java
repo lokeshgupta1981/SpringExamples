@@ -1,5 +1,7 @@
 package com.howtodoinjava.reactive.demo.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
@@ -19,6 +21,8 @@ import reactor.netty.http.client.HttpClient;
 @EnableWebFlux
 public class WebFluxConfig implements WebFluxConfigurer
 {  
+	Logger logger = LoggerFactory.getLogger(WebFluxConfig.class);
+	
 	@Bean
 	public WebClient getWebClient()
 	{
@@ -29,7 +33,7 @@ public class WebFluxConfig implements WebFluxConfigurer
 		                        .addHandlerLast(new ReadTimeoutHandler(10))
 		                        .addHandlerLast(new WriteTimeoutHandler(10))));
 		
-		ClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);	    
+		ClientHttpConnector connector = new ReactorClientHttpConnector(httpClient.wiretap(true));	    
 
 		return WebClient.builder()
 		        .baseUrl("http://localhost:3000")
