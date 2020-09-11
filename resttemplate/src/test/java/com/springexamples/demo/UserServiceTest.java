@@ -36,5 +36,7 @@ public class UserServiceTest
 		String userServiceResponse = client.testUserService();
 		
 		assertThat(userServiceResponse).isEqualTo("<users></users>");
+		
+		
 	}
 }

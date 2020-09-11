@@ -1,6 +1,8 @@
 package com.springexamples.demo.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,14 +15,17 @@ public class UserServiceImpl implements UserService {
     RestTemplate restTemplate;
 	
 	@Override
-	public String testUserService() {
-
+	public String testUserService() 
+	{
 		final String uri = "http://localhost:8080/users";
-   	 
+		
+		HttpHeaders headers = new HttpHeaders();
+		headers.set("Header", "value");
+		headers.set("Other-Header", "othervalue");
+		
+		HttpEntity<String> entity = new HttpEntity<String>(headers);
+		
         String result = restTemplate.getForObject(uri, String.class);
- 
-        System.out.println(result);
-        
         return result;
 	}
 }
