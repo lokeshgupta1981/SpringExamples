@@ -55,6 +55,7 @@
 	    <module>batch-partitioner</module>
 	    <module>boot-hateoas</module>
     	<module>spring-reactive</module>
+    <module>spring-boot-hateoas</module>
   </modules>
 
 	<build>
