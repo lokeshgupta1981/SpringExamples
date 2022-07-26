@@ -11,21 +11,21 @@ import com.springexamples.demo.config.HttpClientConfig;
 import com.springexamples.demo.config.RestTemplateConfig;
 import com.springexamples.demo.web.EmployeeController;
 
-@RunWith(SpringRunner.class)
-@Import({EmployeeController.class, HttpClientConfig.class, RestTemplateConfig.class})
+/*@RunWith(SpringRunner.class)
+@Import({EmployeeController.class, HttpClientConfig.class, RestTemplateConfig.class})*/
 public class EmployeeControllerTest 
 {
-	@Autowired
+	/*@Autowired
     RestTemplate restTemplate;
 	
-	@Test
+	*//*@Test
 	public void testGetEmployees() 
 	{
-		final String uri = "http://localhost:8080/springrestexample/employees";
+		final String uri = "http://localhost:8080/employees";
 		
 		RestTemplate restTemplate = new RestTemplate();
 		String result = restTemplate.getForObject(uri, String.class);
 
 		System.out.println(result);
-	}
+	}*/
 }

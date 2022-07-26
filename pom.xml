@@ -48,12 +48,12 @@
 		<module>rest-crud-hibernate</module>
 		<module>i18n</module>
 		<module>oauth2</module>
-		<module>spring-rmi</module>
+		<!--<module>spring-rmi</module>-->
     	<module>email</module>
 	    <module>aop</module>
-	    <module>batch-decorator</module>
-	    <module>batch-partitioner</module>
-	    <module>boot-hateoas</module>
+	    <!--<module>batch-decorator</module>-->
+	    <!--<module>batch-partitioner</module>-->
+	    <!--<module>boot-hateoas</module>-->
     	<module>spring-reactive</module>
     	<!--<module>spring-boot-hateoas</module>-->
   </modules>
