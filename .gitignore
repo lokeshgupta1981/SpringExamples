@@ -23,6 +23,10 @@ target/
 .classpath
 .project
 
+# intelliJ IDEA
+.idea/
+*.iml
+
 # OS
 .DS_Store
 
