@@ -1,75 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.springexamples.demo</groupId>
-	<artifactId>SpringExamples</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
+  <groupId>com.springexamples.demo</groupId>
+  <artifactId>SpringExamples</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
-	<name>SpringExamples</name>
-	<url>http://maven.apache.org</url>
+  <name>SpringExamples</name>
+  <url>https://howtodoinjava.com</url>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-	</properties>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>17</java.version>
+  </properties>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.3.RELEASE</version>
-	</parent>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.7.6</version>
+  </parent>
 
-	<modules>
-		<module>minimum-setup</module>
-		<module>main-class</module>
-		<module>get-loaded-beans-info</module>
-		<module>disable-spring-boot-banner</module>
-		<module>custom-spring-boot-banner</module>
-		<module>context-path-server-port</module>
-		<module>embedded-jetty-server</module>
-		<module>template-freemarker</module>
-		<module>template-thymeleaf</module>
-		<module>template-mustache</module>
-		<module>template-jsp</module>
-		<module>ssl-https</module>
-		<module>packaging-war</module>
-		<module>command-line-runner</module>
-		<module>server-customization</module>
-		<module>enable-scheduling</module>
-		<module>rest-jersey-example</module>
-		<module>swagger-ui</module>
-		<!-- <module>rest-hateoas</module> -->
-		<module>resttemplate</module>
-		<module>logger-configuration</module>
-		<!-- <module>unit-testing</module> -->
-		<module>spring-webflux-demo</module>
-		<module>rest-crud-hibernate</module>
-		<module>i18n</module>
-		<module>oauth2</module>
-		<!--<module>spring-rmi</module>-->
-    	<module>email</module>
-	    <module>aop</module>
-	    <!--<module>batch-decorator</module>-->
-	    <!--<module>batch-partitioner</module>-->
-	    <!--<module>boot-hateoas</module>-->
-    	<module>spring-reactive</module>
-    	<!--<module>spring-boot-hateoas</module>-->
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.24</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <modules>
+    <module>minimum-setup</module>
+    <module>main-class</module>
+    <module>get-loaded-beans-info</module>
+    <module>disable-spring-boot-banner</module>
+    <module>custom-spring-boot-banner</module>
+    <module>context-path-server-port</module>
+    <module>embedded-jetty-server</module>
+    <module>template-freemarker</module>
+    <module>template-thymeleaf</module>
+    <module>template-mustache</module>
+    <module>template-jsp</module>
+    <module>ssl-https</module>
+    <module>packaging-war</module>
+    <module>command-line-runner</module>
+    <module>server-customization</module>
+    <module>enable-scheduling</module>
+    <module>rest-jersey-example</module>
+    <module>swagger-ui</module>
+    <module>rest-hateoas</module>
+    <module>resttemplate</module>
+    <module>logger-configuration</module>
+    <module>unit-testing</module>
+    <module>spring-webflux-demo</module>
+    <module>rest-crud-hibernate</module>
+    <module>i18n</module>
+    <module>oauth2</module>
+    <!--<module>spring-rmi</module>-->
+    <module>email</module>
+    <module>aop</module>
+    <module>batch-decorator</module>
+    <module>batch-partitioner</module>
+    <module>boot-hateoas</module>
+    <module>spring-reactive</module>
+    <module>spring-boot-hateoas</module>
   </modules>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.1.1</version><!--$NO-MVN-MAN-VER$-->
-				<!-- <configuration>
-					<archive>
-						<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-					</archive>
-				</configuration> -->
-			</plugin>
-		</plugins>
-	</build>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.1</version><!--$NO-MVN-MAN-VER$-->
+        <!-- <configuration>
+          <archive>
+            <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration> -->
+      </plugin>
+    </plugins>
+  </build>
 </project>

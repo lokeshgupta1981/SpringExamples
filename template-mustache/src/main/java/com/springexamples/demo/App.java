@@ -2,7 +2,6 @@ package com.springexamples.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.mustache.MustacheEnvironmentCollector;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 
@@ -14,7 +13,7 @@ public class App {
 		SpringApplication.run(App.class, args);
 	}
 
-	@Bean
+	/*@Bean
 	public Mustache.Compiler mustacheCompiler(Mustache.TemplateLoader templateLoader, 
 												Environment environment) 
 	{
@@ -26,5 +25,5 @@ public class App {
 				.defaultValue("Some Default Value")
 				.withLoader(templateLoader)
 				.withCollector(collector);
-	}
+	}*/
 }

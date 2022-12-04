@@ -1,13 +1,11 @@
 package com.springexamples.demo.model;
 
 import java.io.Serializable;
-
 import javax.xml.bind.annotation.XmlRootElement;
-
-import org.springframework.hateoas.ResourceSupport;
+import org.springframework.hateoas.RepresentationModel;
 
 @XmlRootElement(name="user-report")
-public class Report extends ResourceSupport implements Serializable {
+public class Report extends RepresentationModel implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	

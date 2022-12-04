@@ -8,11 +8,11 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.springframework.hateoas.ResourceSupport;
+import org.springframework.hateoas.RepresentationModel;
   
 @XmlAccessorType(XmlAccessType.NONE)
 @XmlRootElement(name = "user")
-public class User extends ResourceSupport implements Serializable {
+public class User extends RepresentationModel implements Serializable {
   
     private static final long serialVersionUID = 1L;
   

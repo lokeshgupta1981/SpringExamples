@@ -7,12 +7,12 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 import org.springframework.hateoas.Link;
-import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 
 import com.springexamples.demo.dao.UserDB;
 import com.springexamples.demo.model.User;
 import com.springexamples.demo.model.Users;
- 
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+
 @Path("/users")
 public class UserResource
 {
@@ -27,7 +27,7 @@ public class UserResource
         for (User user : users.getUsers()) 
         {
         	//Adding self link user 'singular' resource
-            Link link = ControllerLinkBuilder
+            Link link = WebMvcLinkBuilder
             		.linkTo(UserResource.class)
             		.slash(user.getUserId())
             		.withSelfRel();
@@ -54,7 +54,7 @@ public class UserResource
         /******Hateoas Links START**********/
         
       //Self link
-        Link selfLink = ControllerLinkBuilder
+        Link selfLink = WebMvcLinkBuilder
         		.linkTo(UserResource.class)
         		.slash(user.getUserId())
         		.withSelfRel();
