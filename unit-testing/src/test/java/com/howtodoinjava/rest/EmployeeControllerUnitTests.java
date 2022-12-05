@@ -4,10 +4,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
+import com.howtodoinjava.rest.controller.EmployeeController;
+import com.howtodoinjava.rest.dao.EmployeeRepository;
+import com.howtodoinjava.rest.model.Employee;
+import com.howtodoinjava.rest.model.Employees;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -17,11 +20,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-
-import com.howtodoinjava.rest.controller.EmployeeController;
-import com.howtodoinjava.rest.dao.EmployeeRepository;
-import com.howtodoinjava.rest.model.Employee;
-import com.howtodoinjava.rest.model.Employees;
 
 @ExtendWith(MockitoExtension.class)
 public class EmployeeControllerUnitTests 

@@ -16,34 +16,33 @@ import com.howtodoinjava.rest.model.Employee;
 import com.howtodoinjava.rest.model.Employees;
 
 @RestController
-public class EmployeeController 
-{
-	@Autowired
-    private EmployeeRepository employeeRepository;
+public class EmployeeController {
 
-	@GetMapping(path="/employees", produces = "application/json")
-    public Employees getEmployees() 
-    {
-		Employees response = new Employees();
-		ArrayList<Employee> list = new ArrayList<>();
-		employeeRepository.findAll().forEach(e -> list.add(e));
-		response.setEmployeeList(list);
-        return response;
-    }
-    
-    @PostMapping(path= "/employees", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Object> addEmployee(@RequestBody Employee employee) {       
-                
-        //add resource
-    	employee = employeeRepository.save(employee);
-        
-        //Create resource location
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-                                    .path("/{id}")
-                                    .buildAndExpand(employee.getId())
-                                    .toUri();
-        
-        //Send location in response
-        return ResponseEntity.created(location).build();
-    }
+  @Autowired
+  private EmployeeRepository employeeRepository;
+
+  @GetMapping(path = "/employees", produces = "application/json")
+  public Employees getEmployees() {
+    Employees response = new Employees();
+    ArrayList<Employee> list = new ArrayList<>();
+    employeeRepository.findAll().forEach(e -> list.add(e));
+    response.setEmployeeList(list);
+    return response;
+  }
+
+  @PostMapping(path = "/employees", consumes = "application/json", produces = "application/json")
+  public ResponseEntity<Object> addEmployee(@RequestBody Employee employee) {
+
+    //add resource
+    employee = employeeRepository.save(employee);
+
+    //Create resource location
+    URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+        .path("/{id}")
+        .buildAndExpand(employee.getId())
+        .toUri();
+
+    //Send location in response
+    return ResponseEntity.created(location).build();
+  }
 }
