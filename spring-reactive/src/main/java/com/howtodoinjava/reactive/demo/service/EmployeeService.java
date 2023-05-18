@@ -42,8 +42,8 @@ public class EmployeeService implements IEmployeeService
 		return webClient.get()
 				.uri("/employees/" + id)
 				.retrieve()
-				/*.onStatus(httpStatus -> HttpStatus.NOT_FOUND.equals(httpStatus),
-                        clientResponse -> Mono.empty())*/
+				.onStatus(httpStatus -> HttpStatus.NOT_FOUND.equals(httpStatus),
+                        clientResponse -> Mono.empty())
 				.bodyToMono(Employee.class);
 	}
 
