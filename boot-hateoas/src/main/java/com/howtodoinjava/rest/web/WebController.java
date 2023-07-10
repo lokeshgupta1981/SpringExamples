@@ -86,9 +86,9 @@ public class WebController {
 	{
 		Page<AlbumEntity> albumEntities = albumRepository.findAll(pageable);
 		
-		PagedModel<AlbumModel> collModel = pagedResourcesAssembler
+		PagedModel<AlbumModel> pagedModel = pagedResourcesAssembler
 							.toModel(albumEntities, albumModelAssembler);
 		
-		return new ResponseEntity<>(collModel,HttpStatus.OK);
+		return new ResponseEntity<>(pagedModel,HttpStatus.OK);
 	}
 }

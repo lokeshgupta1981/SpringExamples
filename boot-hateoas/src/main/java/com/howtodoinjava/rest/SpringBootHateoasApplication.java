@@ -1,13 +1,14 @@
 package com.howtodoinjava.rest;
 
-
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.filter.ForwardedHeaderFilter;
 
 @SpringBootApplication
-//@EnableAutoConfiguration(exclude = HypermediaAutoConfiguration.class)
+@EnableAutoConfiguration(exclude = HypermediaAutoConfiguration.class)
 public class SpringBootHateoasApplication {
 
 	public static void main(String[] args) {
