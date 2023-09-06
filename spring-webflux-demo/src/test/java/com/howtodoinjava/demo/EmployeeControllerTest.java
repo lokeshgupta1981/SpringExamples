@@ -26,82 +26,80 @@ import reactor.core.publisher.Mono;
 
 @WebFluxTest(controllers = EmployeeController.class)
 @Import(EmployeeService.class)
-public class EmployeeControllerTest 
-{
-	@MockBean
-	EmployeeRepository repository;
+public class EmployeeControllerTest {
 
-	@Autowired
-	private WebTestClient webClient;
+  @MockBean
+  EmployeeRepository repository;
 
-	@Test
-	void testCreateEmployee() {
-		Employee employee = new Employee();
-		employee.setId(1);
-		employee.setName("Test");
-		employee.setSalary(1000);
+  @Autowired
+  private WebTestClient webClient;
 
-		Mockito.when(repository.save(employee)).thenReturn(Mono.just(employee));
+  @Test
+  void testCreateEmployee() {
+    Employee employee = new Employee();
+    employee.setId(1);
+    employee.setName("Test");
+    employee.setSalary(1000);
 
-		webClient.post()
-			.uri("/create")
-			.contentType(MediaType.APPLICATION_JSON)
-			.body(BodyInserters.fromObject(employee))
-			.exchange()
-			.expectStatus().isCreated();
+    Mockito.when(repository.save(employee)).thenReturn(Mono.just(employee));
 
-		Mockito.verify(repository, times(1)).save(employee);
-	}
-	
-	@Test
-    void testGetEmployeesByName() 
-	{
-		Employee employee = new Employee();
-		employee.setId(1);
-		employee.setName("Test");
-		employee.setSalary(1000);
-		
-		List<Employee> list = new ArrayList<Employee>();
-		list.add(employee);
-		
-		Flux<Employee> employeeFlux = Flux.fromIterable(list);
-		
-        Mockito
-            .when(repository.findByName("Test"))
-            .thenReturn(employeeFlux);
+    webClient.post()
+        .uri("/create")
+        .contentType(MediaType.APPLICATION_JSON)
+        .body(BodyInserters.fromObject(employee))
+        .exchange()
+        .expectStatus().isCreated();
 
-        webClient.get().uri("/name/{name}", "Test")
-        	.header(HttpHeaders.ACCEPT, "application/json")
-	        .exchange()
-	        .expectStatus().isOk()
-	        .expectBodyList(Employee.class);
-        
-        Mockito.verify(repository, times(1)).findByName("Test");
-    }
-	
-	@Test
-    void testGetEmployeeById() 
-	{
-		Employee employee = new Employee();
-		employee.setId(100);
-		employee.setName("Test");
-		employee.setSalary(1000);
-			
-        Mockito
-            .when(repository.findById(100))
-            .thenReturn(Mono.just(employee));
+    Mockito.verify(repository, times(1)).save(employee);
+  }
 
-        webClient.get().uri("/{id}", 100)
-	        .exchange()
-	        .expectStatus().isOk()
-	        .expectBody()
-	        .jsonPath("$.name").isNotEmpty()
-	        .jsonPath("$.id").isEqualTo(100)
-	        .jsonPath("$.name").isEqualTo("Test")
-	        .jsonPath("$.salary").isEqualTo(1000);
-        
-        Mockito.verify(repository, times(1)).findById(100);
-    }
+  @Test
+  void testGetEmployeesByName() {
+    Employee employee = new Employee();
+    employee.setId(1);
+    employee.setName("Test");
+    employee.setSalary(1000);
+
+    List<Employee> list = new ArrayList<Employee>();
+    list.add(employee);
+
+    Flux<Employee> employeeFlux = Flux.fromIterable(list);
+
+    Mockito
+        .when(repository.findByName("Test"))
+        .thenReturn(employeeFlux);
+
+    webClient.get().uri("/name/{name}", "Test")
+        .header(HttpHeaders.ACCEPT, "application/json")
+        .exchange()
+        .expectStatus().isOk()
+        .expectBodyList(Employee.class);
+
+    Mockito.verify(repository, times(1)).findByName("Test");
+  }
+
+  @Test
+  void testGetEmployeeById() {
+    Employee employee = new Employee();
+    employee.setId(100);
+    employee.setName("Test");
+    employee.setSalary(1000);
+
+    Mockito
+        .when(repository.findById(100))
+        .thenReturn(Mono.just(employee));
+
+    webClient.get().uri("/{id}", 100)
+        .exchange()
+        .expectStatus().isOk()
+        .expectBody()
+        .jsonPath("$.name").isNotEmpty()
+        .jsonPath("$.id").isEqualTo(100)
+        .jsonPath("$.name").isEqualTo("Test")
+        .jsonPath("$.salary").isEqualTo(1000);
+
+    Mockito.verify(repository, times(1)).findById(100);
+  }
 
 	/*@Test
     void testDeleteEmployee() 
