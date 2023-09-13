@@ -32,11 +32,11 @@ public class SSLConfig {
 			connector.setSecure(true);
 			connector.setPort(8443);
 			protocol.setSSLEnabled(true);
-			protocol.setKeystoreFile(keystore.getAbsolutePath());
+			/*protocol.setKeystoreFile(keystore.getAbsolutePath());
 			protocol.setKeystorePass("password");
 			protocol.setTruststoreFile(truststore.getAbsolutePath());
 			protocol.setTruststorePass("password");
-			protocol.setKeyAlias("tomcat");
+			protocol.setKeyAlias("tomcat");*/
 			return connector;
 		} catch (IOException ex) {
 			throw new IllegalStateException(

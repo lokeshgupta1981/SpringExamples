@@ -1,7 +1,7 @@
 package com.springexamples.demo.model;
 
 import java.io.Serializable;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 import org.springframework.hateoas.RepresentationModel;
 
 @XmlRootElement(name="user-report")
