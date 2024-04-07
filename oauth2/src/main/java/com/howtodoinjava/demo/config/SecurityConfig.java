@@ -6,6 +6,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
@@ -15,8 +16,8 @@ import org.springframework.security.web.SecurityFilterChain;
 @Order(1)
 public class SecurityConfig {
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+  @Bean
+  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         /*http.requestMatchers()
           .antMatchers("/login", "/oauth/authorize")
           .and()
@@ -25,16 +26,16 @@ public class SecurityConfig {
           .and()
           .formLogin().permitAll();*/
 
-      http
-          .authorizeHttpRequests((authorizeHttpRequests) ->
-              authorizeHttpRequests
-                  .requestMatchers("/login", "/oauth/authorize")
-                  .authenticated()
-          )
-          .formLogin(Customizer.withDefaults());
+    http
+        .authorizeHttpRequests((authorizeHttpRequests) ->
+            authorizeHttpRequests
+                .requestMatchers("/login", "/oauth/authorize")
+                .authenticated()
+        )
+        .formLogin(Customizer.withDefaults());
 
-      return http.build();
-    }
+    return http.build();
+  }
 
     /*@Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -48,16 +49,16 @@ public class SecurityConfig {
   @Bean
   public UserDetailsService userDetailsService() {
 
-    InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-    manager.createUser(User.withDefaultPasswordEncoder()
+    UserDetails user = User.builder()
         .username("user")
         .password("password")
-        .roles("USER").build());
-    return manager;
+        .roles("USER")
+        .build();
+    return new InMemoryUserDetailsManager(user);
   }
 
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
+  @Bean
+  public BCryptPasswordEncoder passwordEncoder() {
+    return new BCryptPasswordEncoder();
+  }
 }

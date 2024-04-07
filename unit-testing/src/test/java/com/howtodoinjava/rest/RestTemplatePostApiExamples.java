@@ -48,7 +48,7 @@ public class RestTemplatePostApiExamples {
 
     ResponseEntity<String> result = restTemplate.postForEntity(uri, httpEntity, String.class);
 
-    Assertions.assertEquals(201, result.getStatusCodeValue());
+    Assertions.assertEquals(201, result.getStatusCode().value());
   }
 
   @Test
@@ -65,6 +65,6 @@ public class RestTemplatePostApiExamples {
 
     ResponseEntity<String> result = restTemplate.postForEntity(uri, request, String.class);
 
-    Assertions.assertEquals(400, result.getStatusCodeValue());
+    Assertions.assertEquals(400, result.getStatusCode().value());
   }
 }

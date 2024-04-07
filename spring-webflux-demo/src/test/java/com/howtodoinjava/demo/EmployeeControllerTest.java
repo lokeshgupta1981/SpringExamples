@@ -46,7 +46,7 @@ public class EmployeeControllerTest {
     webClient.post()
         .uri("/create")
         .contentType(MediaType.APPLICATION_JSON)
-        .body(BodyInserters.fromObject(employee))
+        .body(BodyInserters.fromValue(employee))
         .exchange()
         .expectStatus().isCreated();
 

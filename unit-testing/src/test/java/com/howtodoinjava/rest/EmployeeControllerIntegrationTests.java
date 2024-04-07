@@ -40,6 +40,6 @@ public class EmployeeControllerIntegrationTests
 		Employee employee = new Employee("Lokesh", "Gupta", "howtodoinjava@gmail.com");
 		ResponseEntity<String> responseEntity = this.restTemplate
 			.postForEntity("http://localhost:" + port + "/employees", employee, String.class);
-		assertEquals(201, responseEntity.getStatusCodeValue());
+		assertEquals(201, responseEntity.getStatusCode().value());
 	}
 }

@@ -43,7 +43,7 @@ public class EmployeeControllerUnitTests
 		Employee employeeToAdd = new Employee("Lokesh", "Gupta", "howtodoinjava@gmail.com");
 		ResponseEntity<Object> responseEntity = employeeController.addEmployee(employeeToAdd);
 		
-		assertThat(responseEntity.getStatusCodeValue()).isEqualTo(201);
+		assertThat(responseEntity.getStatusCode().value()).isEqualTo(201);
 		assertThat(responseEntity.getHeaders().getLocation().getPath()).isEqualTo("/1");
 	}
 	
